@@ -62,13 +62,14 @@ body{
 .content{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:center;
     flex-wrap: wrap;
+    
 }
 .content__item{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 50px;
+    margin: 40px;
 }
