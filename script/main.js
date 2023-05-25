@@ -1,37 +1,27 @@
 import { dateInfo } from './dateParser.js'
+import {CATEGORY_1, CATEGORY_2, CATEGORY_3, CATEGORY_4} from './mockData.js'
+CATEGORY_1.forEach(({id, img, cardName, date}) => {
 
-let date = dateInfo()
-console.log(date)
-const categories = document.querySelectorAll('.nav__link')
-console.log(categories)
-console.log(categories.values)
-categories.forEach( category => {
-    category.addEventListener('click', createCard)
 })
-function createCard (event){
-    /*console.log(event.target.dataset.number)
-    console.log(event.target.textContent)*/
-    let cardSet = event.target.dataset.number
-    for(let item = 0; item < cardSet; item++){
-        const div = document.createElement('div')
-        div.classList.add('content__item')
-        const content = document.querySelector('.content')
-        content.appendChild(div)
-        const cardItem = `
-            <div class="content__item">
-                <img class="item__img" alt="img">
-                <h3>Подпись ${item}</h3>
-                <h3>${dateInfo()}</h3>
-                <button>Купить</button>
-            </div>
-        `
-        //content.innerHTML = cardItem
-        content.insertAdjacentHTML('afterbegin', cardItem)
-        const img = document.querySelector('.item__img')
-        img.src = 'https://placebear.com/200/200'
-        //console.log(item)
-    }
-}
+
+const category = document.querySelectorAll('.nav__link')
+const inactive_cat = document.querySelectorAll('.card__item')
+category.forEach(link => {
+    link.addEventListener('click', function(event){
+        let currentLink = link
+        let categoryId = currentLink.getAttribute('data-tab')
+        console.log(categoryId)
+        let currentCat = document.querySelector(categoryId)
+        
+        //console.log(currentCat)
+        
+        category.forEach(link => {link.classList.remove('active')})
+        inactive_cat.forEach(catContent => {catContent.classList.add('inactive-cat')})
+
+        currentLink.classList.add('active')
+        currentCat.classList.remove('inactive-cat')
+    })
+})
 
 
 
