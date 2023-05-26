@@ -56,8 +56,8 @@ const CATEGORY_1 = [
     },
     {
         id: 10,
-        img: 'beatae et provident et ut vel',
-        title: 'https://via.placeholder.com/300/810b14',
+        img: 'https://via.placeholder.com/300/810b14',
+        title: 'beatae et provident et ut vel',
         date: dateInfo()
     },
 ]
@@ -119,8 +119,8 @@ const CATEGORY_2 = [
     },
     {
         id: 10,
-        img: 'beatae et provident et ut vel',
-        title: 'https://via.placeholder.com/300/810b14',
+        img: 'https://via.placeholder.com/300/810b14',
+        title: 'beatae et provident et ut vel',
         date: dateInfo()
     },
     {
@@ -194,8 +194,8 @@ const CATEGORY_3 = [
     },
     {
         id: 10,
-        img: 'beatae et provident et ut vel',
-        title: 'https://via.placeholder.com/300/810b14',
+        img: 'https://via.placeholder.com/300/810b14',
+        title: 'beatae et provident et ut vel',
         date: dateInfo()
     },
     {
@@ -263,8 +263,8 @@ const CATEGORY_4 = [
     },
     {
         id: 10,
-        img: 'beatae et provident et ut vel',
-        title: 'https://via.placeholder.com/300/810b14',
+        img: 'https://via.placeholder.com/300/810b14',
+        title: 'beatae et provident et ut vel',
         date: dateInfo()
     },
     {

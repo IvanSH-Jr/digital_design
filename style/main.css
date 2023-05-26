@@ -12,6 +12,12 @@ body{
 a{
     color: inherit;
 }
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
 /*Container*/
 .container{
     width: 100%;
@@ -71,9 +77,13 @@ a{
 .content{
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content:space-evenly;
     flex-wrap: wrap;
     
+}
+.content-name{
+    margin-top: 20px;
+    text-align: center;
 }
 .content__item{
     display: flex;
@@ -81,8 +91,26 @@ a{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: 40px;
+    padding: 20px;
+    width: 340px;
 }
 
-.inactive-cat{
-    display: none;
+.content__item span{
+    max-width: 300px;
+    font-weight: 600;
+    text-decoration: wavy;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.item__btn{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
 }
