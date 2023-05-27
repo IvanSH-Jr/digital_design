@@ -59,7 +59,6 @@ function contentGenerator (mockCategory, categoryName){
     `
     itemBlock.push(mockItem)
     })
-    
     return itemBlock
 }
 

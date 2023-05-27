@@ -3,18 +3,12 @@ import {renderContent} from './mock.js'
 let getCategoryData = ''
 let catName = ''
 const categories = document.querySelectorAll('.nav__link')
-categories.forEach(category => {
-    category.addEventListener('click', event => {
-        event.preventDefault()
-        getCategoryData = category.getAttribute('data-tab')
-        catName = category.textContent
-        if(event.target.tagName === 'A') route(event)
-    })
-})
-
+navListener(categories)
+const menuNav = document.querySelectorAll('.menu-categories')
+navListener(menuNav)
 const route = (event) => {
     window.history.pushState({}, '', event.target.href)
-    handleLocation()
+    pseudoRouter()
 }
 
 const routers = {
@@ -25,20 +19,33 @@ const routers = {
     '/category4': '../categories/categories.html'
 }
 
-const handleLocation = async () => {
+const pseudoRouter = async () => {
     const path = window.location.pathname
-   
     const html = await fetch(routers[path]).then((data) => data.text())
-    
+    const blockName = document.querySelector('.content__name')
     document.querySelector('.content').innerHTML = html
     if(path != '/'){
-        const contentCat = renderContent(getCategoryData)
+        const contentCat = renderContent(getCategoryData, catName)
+        blockName.textContent = catName
         document.querySelector('.content').insertAdjacentHTML('afterbegin',contentCat) 
+    }else{
+        blockName.textContent = ''
     }
-
+    
 }
 
-window.onpopstate = handleLocation
+window.onpopstate = pseudoRouter
 window.route = route
-handleLocation()
+pseudoRouter()
 
+
+function navListener(categories){
+    categories.forEach(category => {
+        category.addEventListener('click', event => {
+            event.preventDefault()
+            getCategoryData = category.getAttribute('data-tab')
+            catName = category.textContent
+            if(event.target.tagName === 'A') route(event)
+        })
+    })
+}

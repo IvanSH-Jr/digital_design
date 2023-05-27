@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 body{
+    height: 100%;
     background-color: #fff;
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,38 +22,64 @@ button {
     border: none;
     padding: 0;
 }
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
 /*Container*/
 .container{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    
+    height: 100%;
 }
 /*Header*/
 .header{
-    
-}
-
-.header__inner{
+    position: fixed;
+    top: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px 0;
-    border-bottom: 3px solid #0a0a0a;
 }
 
+.header__menu{
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+.header__menu-categories{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.header__menu-categories a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.header__menu-categories a:hover{background-color: #ddd;}
+.header__menu:hover .header__menu-categories{display: block;}
+
+.main{
+    flex: 1 1 auto;
+}
 /*Navigation*/
 .nav{
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
 }
 .nav__link{
     margin-left: 50px;
     text-decoration: none;
-    opacity: .75;
+    
     transition: opacity .1s linear;
 }
 .nav__link:first-child{
@@ -60,14 +90,12 @@ button {
     opacity: 1;
 }
 
-.active{
-    padding: 10px;
-    border: 2px solid black;
-    opacity: 1;
-}
 /*Switcher*/
 .header__theme{
-
+    position: fixed;
+    display: flex;
+    top: 15px;
+    right: 30px;
 }
 .header__theme:hover{
     cursor: pointer;
@@ -81,7 +109,7 @@ button {
     flex-wrap: wrap;
     
 }
-.content-name{
+.content__name{
     margin-top: 20px;
     text-align: center;
 }
@@ -113,4 +141,17 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.footer{
+    margin-top: 40px;
+    background: #4676D7;
+}
+
+.footer__inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 0;
+    
 }
