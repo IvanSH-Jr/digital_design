@@ -1,5 +1,5 @@
-
 import {renderContent} from './mock.js'
+import { formListener } from './formAction.js'
 let getCategoryData = ''
 let catName = ''
 const categories = document.querySelectorAll('.nav__link')
@@ -28,9 +28,12 @@ const pseudoRouter = async () => {
         const contentCat = renderContent(getCategoryData, catName)
         blockName.textContent = catName
         document.querySelector('.content').insertAdjacentHTML('afterbegin',contentCat) 
+        
     }else{
         blockName.textContent = ''
     }
+    
+    if(document.querySelector('.content__item')) formListener()
     
 }
 

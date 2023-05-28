@@ -121,6 +121,9 @@ button {
     margin: 40px;
     padding: 20px;
     width: 340px;
+    justify-content: center;
+    align-self: flex-start;
+    max-height: 480px;
 }
 
 .content__item span{
@@ -155,3 +158,4 @@ button {
     padding: 35px 0;
     
 }
+

@@ -1,0 +1,92 @@
+
+.form-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all;
+}
+.form-wrapper.open{
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s all;
+}
+
+.my-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    width: 400px;
+    padding: 25px;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 0.5s all;
+}
+.my-form.open{
+    transform: translate(-50%,-50%) scale(1);
+    transition: 0.5s all;
+}
+.form-close__img{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 30px;
+    
+}
+.my-form label{
+    display: flex;
+    flex-direction: column;
+}
+
+.my-form .label__text{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #7a8499;
+    margin: 20px 0;
+}
+
+.colors{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.colors span{
+    margin-right: 15px;
+    width: 60%;
+}
+
+.my-form input{
+    height: 45px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #7a8499;
+}
+.my-form input:focus{
+    border-bottom: 2px solid #4676D7;
+}
+
+.my-form textarea{
+    resize: none;
+    width: 100%;
+    height: 150px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #7a8499;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.my-form textarea:focus{
+    border-bottom: 2px solid #4676D7;
+}
+
+.from-buy__btn{
+    width: 100%;
+}

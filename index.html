@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/upwardBtn.css">
     <link rel="stylesheet" title="theme" href="#">
-    
+    <link rel="stylesheet" href="./style/modal_window.css">
     <title>Digital Design</title>
 </head>
 <body>
@@ -53,8 +53,34 @@
             </div>
         </div>
     </footer>
+<div class="form-wrapper">
+    <form class="my-form">
+        <img class="form-close__img" src="./img/cross-mark-svgrepo-com.svg" alt="">
+        <label>
+            <div class="label__text">Количество товара</div>
+            <input class="form__input" type="number" min="1" value="1">
+        </label>
+        <label class="label__color">
+            <div class="label__text">Выберите цвет</div>
+            <div class="label__text">
+                <div class="colors">
+                    <span>Красный</span><input type="radio" name="colorBtn" value="red">
+                    <span>Зеленый</span><input type="radio" name="colorBtn" value="green">
+                    <span>Желтый</span><input type="radio" name="colorBtn" value="yellow">
+                </div>
+            </div>
+        </label>
+        <label>
+            <div class="label__text">Ваше сообщение</div>
+            <textarea></textarea>
+        </label>
+        <button  class="item__btn form-buy__btn">Купить</button>  
+    </form>
+</div>
+
 </div>
     <script type="module" src="./script/main.js"></script>
     <script src="./script/scrollBtn.js"></script>
+    
 </body>
 </html>
